@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:task_week1/screen/registerScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: ListView(
             children: [
               SizedBox(
-                height: 40.0,
+                height: 60.0,
               ),
               Container(
                 // alignment: Alignment.center,
@@ -34,54 +35,67 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               Container(
                 alignment: Alignment.center,
                 padding: EdgeInsets.all(18.0),
                 child: Text(
                   "Silahkan Login",
-                  style: TextStyle(fontSize: 18.0),
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
                 ),
               ),
               Container(
                 padding: EdgeInsets.all(18.0),
-                child: TextField(
-                  controller: userNameController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      borderSide: BorderSide(color: Colors.cyan),
+                child: Theme(
+                  data: Theme.of(context).copyWith(primaryColor: Colors.cyan),
+                  child: TextField(
+                    controller: userNameController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          borderSide: BorderSide(color: Colors.cyan)),
+                      labelText: 'User Name',
                     ),
-                    labelText: 'User Name',
                   ),
                 ),
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(18, 5, 18, 0),
-                child: TextField(
-                  obscureText: true,
-                  controller: passwordController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      borderSide: BorderSide(color: Colors.cyan),
+                child: Theme(
+                  data: Theme.of(context).copyWith(
+                      primaryColor:
+                          Colors.cyan), // --> atur primary color menjadi cyan
+                  child: TextField(
+                    obscureText: true,
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                        borderSide: BorderSide(
+                          color: Colors.cyan,
+                        ),
+                      ),
+                      labelText: 'Password',
                     ),
-                    labelText: 'Password',
                   ),
                 ),
               ),
-              FlatButton(
-                onPressed: () {},
-                textColor: Colors.cyan,
+              // FlatButton(
+              //   onPressed: () {},
+              //   textColor: Colors.cyan,
+              // ),
+              SizedBox(
+                height: 50,
               ),
               Container(
-                height: 45,
+                height: 53,
                 padding: EdgeInsets.fromLTRB(120, 7, 120, 0),
-                child: FlatButton(
+                child: RaisedButton(
+                  color: Colors.cyan,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      side: BorderSide(color: Colors.cyan)),
+                    borderRadius: BorderRadius.circular(23.0),
+                  ),
                   onPressed: () {
                     print(userNameController.text);
                     print(passwordController.text);
@@ -89,7 +103,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   textColor: Colors.cyan,
                   child: Text(
                     'Login',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                 ),
               ),
@@ -99,7 +114,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Text("Belum Punya Akun?"),
                     FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RegisterScreen(),
+                          ),
+                        );
+                      },
                       child: Text(
                         "SignUp",
                         style: TextStyle(fontWeight: FontWeight.bold),
