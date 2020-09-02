@@ -13,126 +13,124 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.all(18.0),
-          child: ListView(
-            children: [
-              SizedBox(
-                height: 60.0,
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(18.0),
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 50.0,
+            ),
+            Container(
+              // alignment: Alignment.center,
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                "WEEK1 UDACODING",
+                style: TextStyle(
+                    color: Colors.cyan,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25.0),
               ),
-              Container(
-                // alignment: Alignment.center,
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  "TASK WEEK1 UDACODING",
-                  style: TextStyle(
-                      color: Colors.cyan,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25.0),
-                ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              alignment: Alignment.center,
+              padding: EdgeInsets.all(18.0),
+              child: Text(
+                "Silahkan Login",
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
               ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(18.0),
-                child: Text(
-                  "Silahkan Login",
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(18.0),
-                child: Theme(
-                  data: Theme.of(context).copyWith(primaryColor: Colors.cyan),
-                  child: TextField(
-                    controller: userNameController,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                          borderSide: BorderSide(color: Colors.cyan)),
-                      labelText: 'User Name',
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(18, 5, 18, 0),
-                child: Theme(
-                  data: Theme.of(context).copyWith(
-                      primaryColor:
-                          Colors.cyan), // --> atur primary color menjadi cyan
-                  child: TextField(
-                    obscureText: true,
-                    controller: passwordController,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
+            ),
+            Container(
+              padding: EdgeInsets.all(18.0),
+              child: Theme(
+                data: Theme.of(context).copyWith(primaryColor: Colors.cyan),
+                child: TextField(
+                  controller: userNameController,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25.0),
-                        borderSide: BorderSide(
-                          color: Colors.cyan,
-                        ),
+                        borderSide: BorderSide(color: Colors.cyan)),
+                    labelText: 'User Name',
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(18, 5, 18, 0),
+              child: Theme(
+                data: Theme.of(context).copyWith(
+                    primaryColor:
+                        Colors.cyan), // --> atur primary color menjadi cyan
+                child: TextField(
+                  obscureText: true,
+                  controller: passwordController,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                      borderSide: BorderSide(
+                        color: Colors.cyan,
                       ),
-                      labelText: 'Password',
                     ),
+                    labelText: 'Password',
                   ),
                 ),
               ),
-              // FlatButton(
-              //   onPressed: () {},
-              //   textColor: Colors.cyan,
-              // ),
-              SizedBox(
-                height: 50,
-              ),
-              Container(
-                height: 53,
-                padding: EdgeInsets.fromLTRB(120, 7, 120, 0),
-                child: RaisedButton(
-                  color: Colors.cyan,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(23.0),
-                  ),
-                  onPressed: () {
-                    print(userNameController.text);
-                    print(passwordController.text);
-                  },
-                  textColor: Colors.cyan,
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
+            ),
+            // FlatButton(
+            //   onPressed: () {},
+            //   textColor: Colors.cyan,
+            // ),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              height: 53,
+              padding: EdgeInsets.fromLTRB(120, 7, 120, 0),
+              child: RaisedButton(
+                color: Colors.cyan,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(23.0),
+                ),
+                onPressed: () {
+                  print(userNameController.text);
+                  print(passwordController.text);
+                },
+                textColor: Colors.cyan,
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Belum Punya Akun?"),
-                    FlatButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => RegisterScreen(),
-                          ),
-                        );
-                      },
-                      child: Text(
-                        "SignUp",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      textColor: Colors.cyan,
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+            ),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Belum Punya Akun?"),
+                  FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "SignUp",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    textColor: Colors.cyan,
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
