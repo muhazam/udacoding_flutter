@@ -34,7 +34,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             height: 20.0,
           ),
           Container(
-            padding: EdgeInsets.all(18.0),
+            padding: EdgeInsets.fromLTRB(35, 18, 35, 18),
             child: Theme(
               data: Theme.of(context).copyWith(primaryColor: Colors.cyan),
               child: TextField(
@@ -49,7 +49,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(18, 5, 18, 18),
+            padding: EdgeInsets.fromLTRB(35, 5, 35, 18),
             child: Theme(
               data: Theme.of(context).copyWith(primaryColor: Colors.cyan),
               child: TextField(
@@ -64,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(18, 5, 18, 0),
+            padding: EdgeInsets.fromLTRB(35, 5, 35, 0),
             child: Theme(
               data: Theme.of(context).copyWith(
                   primaryColor:
@@ -89,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
           Container(
             height: 53,
-            padding: EdgeInsets.fromLTRB(120, 7, 120, 0),
+            padding: EdgeInsets.fromLTRB(135, 7, 135, 0),
             child: RaisedButton(
               color: Colors.cyan,
               shape: RoundedRectangleBorder(
