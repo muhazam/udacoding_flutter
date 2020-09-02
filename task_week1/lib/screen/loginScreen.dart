@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(18.0),
+        padding: EdgeInsets.all(0),
         child: ListView(
           children: [
             SizedBox(
@@ -80,10 +80,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            // FlatButton(
-            //   onPressed: () {},
-            //   textColor: Colors.cyan,
-            // ),
             SizedBox(
               height: 40,
             ),
