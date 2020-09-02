@@ -97,6 +97,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               onPressed: () {
                 print(userNameController.text);
+                print(emailController.text);
                 print(passwordController.text);
               },
               textColor: Colors.cyan,
