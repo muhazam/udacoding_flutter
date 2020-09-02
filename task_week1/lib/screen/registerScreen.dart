@@ -53,7 +53,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Theme(
               data: Theme.of(context).copyWith(primaryColor: Colors.cyan),
               child: TextField(
-                controller: userNameController,
+                controller: emailController,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(25.0),
