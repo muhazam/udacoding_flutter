@@ -32,10 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(
-            username: username,
-            password: password,
-          ),
+          builder: (context) => HomePage(),
         ),
       );
       Fluttertoast.showToast(
