@@ -7,10 +7,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
   var username = preferences.getString('username');
+  var password = preferences.getString('password');
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: username == null ? LoginScreen() : HomePage(),
+      home: username == null && password == null ? LoginScreen() : HomePage(),
     ),
   );
 }

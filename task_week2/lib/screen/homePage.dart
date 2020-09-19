@@ -15,7 +15,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String username = "";
-
   Future getUsername() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     setState(() {
@@ -23,9 +22,18 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  String password = "";
+  Future getPassword() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      password = preferences.getString('password');
+    });
+  }
+
   Future logOut(BuildContext context) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.remove('username');
+    preferences.remove('password');
     Fluttertoast.showToast(
         msg: "Logout Successful",
         toastLength: Toast.LENGTH_SHORT,
@@ -46,6 +54,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     getUsername();
+    getPassword();
   }
 
   @override
@@ -56,11 +65,10 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Center(
-            // child: username == '' ? Text('') : Text(username),
-            child: Text('Haii : ${widget.username}'),
+            child: Text('Haii : ' + username),
           ),
           Center(
-            child: Text('Passwordmu : ${widget.password}'),
+            child: Text('Passwordmu : ' + password),
           ),
           SizedBox(
             height: 20,

@@ -23,6 +23,10 @@ class _LoginScreenState extends State<LoginScreen> {
       preferences.setString(
         'username',
         usernameController.text,
+      );
+      preferences.setString(
+        'password',
+        passwordController.text,
       ); // --> untuk menyimpan session login dengan library SharedPreferences
 
       Navigator.push(
