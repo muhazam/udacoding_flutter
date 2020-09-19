@@ -35,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       );
       Fluttertoast.showToast(
+          // --> pake alert Toast
           msg: "Login Successful",
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
