@@ -4,11 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:task_week2/screen/LoginScreen.dart';
 
 class HomePage extends StatefulWidget {
-  final String username;
-  final String password;
-
-  const HomePage({Key key, this.username, this.password}) : super(key: key);
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -74,7 +69,7 @@ class _HomePageState extends State<HomePage> {
             height: 20,
           ),
           MaterialButton(
-            color: Colors.purple,
+            color: Colors.cyan,
             onPressed: () {
               logOut(context);
             },
