@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:task_week2/screen/LoginScreen.dart';
+import 'package:task_week2/screen/loginScreen.dart';
 import 'package:task_week2/screen/homePage.dart';
 
 void main() async {
