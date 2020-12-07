@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:task_week2/screen/GoToPage/bmiCalculator/pageBmiCalculator.dart';
 import 'package:task_week2/screen/GoToPage/pageProfile.dart';
+import 'package:task_week2/screen/GoToPage/simpleCalculator/pageSimpleCalculator.dart';
 import 'package:task_week2/screen/loginScreen.dart';
 
 class HomePage extends StatefulWidget {
@@ -119,9 +120,7 @@ class _HomePageState extends State<HomePage> {
           elevation: 9,
           child: InkWell(
             splashColor: Colors.yellow.withAlpha(70),
-            onTap: () {
-              print('Card tapped.');
-            },
+            onTap: () => _navPageSimpleCalculator(),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
@@ -153,7 +152,10 @@ class _HomePageState extends State<HomePage> {
         context, MaterialPageRoute(builder: (context) => BmiInput()));
   }
 
-  void _navPageSimpleCalculator() {}
+  void _navPageSimpleCalculator() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => SimpleCalculator()));
+  }
 
   Widget _cardUserPage() {
     return Container(
