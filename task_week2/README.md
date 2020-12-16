@@ -8,7 +8,7 @@ A new Flutter application.
 
 
 ## 2. Simple Calculator ScreeShoot
-![week2Udcoding4](https://user-images.githubusercontent.com/18481817/102350292-4995ba80-3fd7-11eb-8d25-415643a7d0fb.jpg)
+![Screenshot from 2020-12-16 16-58-17](https://user-images.githubusercontent.com/18481817/102350867-27506c80-3fd8-11eb-970f-d0f20f4f6331.png)
 
 This project is a starting point for a Flutter application.
 
